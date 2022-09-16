@@ -1,0 +1,32 @@
+OS: Ubuntu 20.04
+Neovim (version 0.7)
+Reference: https://github.com/LunarVim/Neovim-from-scratch
+
+Step 1: copy the .bash_profile under the home directory, and add "source $HOME/.bash_profile" at the end of .bashrc file.
+        Install git by "sudo apt install git
+
+Step 2: Install Neovim (version >=0.7), by the following commands:
+        sudo add-apt-repository ppa:neovim-ppa/stable
+        sudo apt-get update
+        sudo apt-get install neovim
+        sudo apt install build-essential
+
+Step 3: configure the neovim. Put the folder of "nvim" under the directory of $HOME/.config/
+        3.1. Install plugins by type command of ":PackerInstall" in a opening vim file
+        3.2. Check status of the vim by type command of ":checkhealth" in a opeing vim file
+              if there are errors for "prettier", "black", and "stylua", then:
+              3.2.1, for install "prettier", firstly install nodejs (version >=14)
+                    sudo apt install -y curl
+                    curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+                    sudo apt install -y nodejs
+                    node --version
+                    sudo apt install -g  npm
+              3.2.2, for install "black":
+                    sudo apt-get -y install black
+              3.2.3, for install "stylua", firstly install Rust by:
+                    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                    source "$HOME/.cargo/env"
+                    cargo install stylua
+
+Step 4: Install Hack Nerd Font. After downloading the Hack Nerd Font, the put all fonts under the directory of "$HOME/.local/share/fonts"
+  
